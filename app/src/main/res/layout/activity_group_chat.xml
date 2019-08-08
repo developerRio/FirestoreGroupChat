@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Activities.GroupChatActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/group_chat_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp" />
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:background="@drawable/button_bg"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/chat_message_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="8.85"
+            android:layout_marginStart="5dp"
+            android:background="#00000000"
+            android:ems="10"
+            android:hint="Type a Message..."
+            android:imeOptions="actionSend"
+            android:inputType="textLongMessage"
+            android:maxLines="1"
+            android:paddingBottom="12dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="14dp"
+            android:singleLine="true"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/chat_send_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.15"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/circle_bg"
+            android:backgroundTint="#8E9DFF"
+            android:padding="10dp"
+            android:tint="#fff"
+            android:src="@drawable/ic_send_black_24dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

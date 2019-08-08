@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GroupChatFirebase</string>
+    <string name="collection_chatrooms">collection_chatrooms</string>
+    <string name="intent_chatroom">intent_chatroom</string>
+    <string name="collection_chat_messages">collection_chat_messages</string>
+    <string name="collection_chatroom_user_list">collection_chatroom_user_list</string>
+    <string name="collection_users">collection_users</string>
+</resources>
