@@ -6,11 +6,13 @@ import java.util.Date;
 
 public class ChatMessage {
 
+    private String type;
     private User user;
     private String message;
     private String message_id;
     private @ServerTimestamp
     Date timestamp;
+    private String from;
 
     public ChatMessage(User user, String message, String message_id, Date timestamp) {
         this.user = user;
@@ -21,6 +23,14 @@ public class ChatMessage {
 
     public ChatMessage() {
 
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public User getUser() {
@@ -53,6 +63,14 @@ public class ChatMessage {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     @Override

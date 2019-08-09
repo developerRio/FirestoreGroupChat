@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         mDb = FirebaseFirestore.getInstance();
         email = "Shaw@gmail.com"; // static user name so u can change different emails or put a dynamic value instead
-        accessToken = UUID.randomUUID().toString();
+        accessToken = email + "123";
 
         startChatButton = findViewById(R.id.start_group_chat_button);
         mRootReference = FirebaseDatabase.getInstance().getReference().child("GroupChat");
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         startChatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // creating new chat room called.....................................................................
+                // creating new chat room called..........
                 buildNewChatroom("WE_ARE_LEGENDS");
             }
         });

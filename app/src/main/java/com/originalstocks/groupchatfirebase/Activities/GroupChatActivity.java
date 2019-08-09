@@ -89,8 +89,7 @@ public class GroupChatActivity extends AppCompatActivity {
                 .document(mChatroom.getChatroom_id())
                 .collection(getString(R.string.collection_chat_messages));
 
-        mChatMessageEventListener = messagesRef
-                .orderBy("timestamp", Query.Direction.ASCENDING)
+        mChatMessageEventListener = messagesRef.orderBy("timestamp", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {

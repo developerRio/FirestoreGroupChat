@@ -18,7 +18,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="5dp"
-        android:elevation="5dp"
+        android:elevation="3dp"
         android:background="@drawable/button_bg"
         android:orientation="horizontal"
         android:weightSum="10">
@@ -50,8 +50,7 @@
             android:layout_gravity="center"
             android:layout_weight="1.15"
             android:layout_marginEnd="5dp"
-            android:background="@drawable/circle_bg"
-            android:backgroundTint="#8E9DFF"
+            android:background="@drawable/chat_bubble"
             android:padding="10dp"
             android:tint="#fff"
             android:src="@drawable/ic_send_black_24dp" />
