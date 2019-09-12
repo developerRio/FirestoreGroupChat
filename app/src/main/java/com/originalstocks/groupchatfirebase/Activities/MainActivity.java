@@ -39,7 +39,6 @@ import javax.annotation.Nullable;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private Button startChatButton;
-    private DatabaseReference mRootReference;
     private ListenerRegistration mChatroomEventListener;
     private FirebaseFirestore mDb;
     private Set<String> mChatroomIds = new HashSet<>();
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         accessToken = email + "123";
 
         startChatButton = findViewById(R.id.start_group_chat_button);
-        mRootReference = FirebaseDatabase.getInstance().getReference().child("GroupChat");
 
         settingUpNewUser();
 

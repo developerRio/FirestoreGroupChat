@@ -1,6 +1,7 @@
 package com.originalstocks.groupchatfirebase.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +25,13 @@ public class ChatMessageRecyclerAdapter extends RecyclerView.Adapter {
 
     private static final int VIEW_TYPE_MESSAGE_SENT = 1;
     private static final int VIEW_TYPE_MESSAGE_RECEIVED = 2;
+    private static final String TAG = "ChatMessageRecyclerAdap";
 
     private ArrayList<ChatMessage> mMessages = new ArrayList<>();
     private ArrayList<User> mUsers = new ArrayList<>();
     private Context mContext;
+    private String dateStringTx;
+    private String pastDate;
 
     public ChatMessageRecyclerAdapter(ArrayList<ChatMessage> messages, ArrayList<User> users, Context context) {
         this.mMessages = messages;
@@ -71,6 +75,25 @@ public class ChatMessageRecyclerAdapter extends RecyclerView.Adapter {
                 final SentMessageHolder sentMessageHolder = (SentMessageHolder) holder;
                 sentMessageHolder.txMessageText.setText(mMessages.get(position).getMessage());
                // Date currentTime = Calendar.getInstance().getTime();
+
+                pastDate = mMessages.get(position).getTimestamp() + "";
+
+                try {
+
+                    if (pastDate.equals("") && pastDate.equals(null)){
+                        Log.e(TAG, "onBindViewHolder_dateStringTx = " + dateStringTx );
+                        dateStringTx = new SimpleDateFormat("HH:mm").format(new Date());
+                        sentMessageHolder.txTimeText.setText(dateStringTx);
+                    }else {
+                        Log.e(TAG, "onBindViewHolder_dateStringTx 2= " + dateStringTx );
+                        dateStringTx = new SimpleDateFormat("HH:mm").format(mMessages.get(position).getTimestamp());
+                        sentMessageHolder.txTimeText.setText(dateStringTx);
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
                 String dateString = new SimpleDateFormat("HH:mm").format(new Date());
                 sentMessageHolder.txTimeText.setText(dateString);
                 break;
@@ -83,12 +106,9 @@ public class ChatMessageRecyclerAdapter extends RecyclerView.Adapter {
 
                 receivedMessageHolder.messageText.setText(mMessages.get(position).getMessage());
                 receivedMessageHolder.userName.setText(mMessages.get(position).getUser().getUsername());
-
                 break;
         }
-
     }
-
 
     @Override
     public int getItemCount() {
@@ -125,19 +145,3 @@ public class ChatMessageRecyclerAdapter extends RecyclerView.Adapter {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
